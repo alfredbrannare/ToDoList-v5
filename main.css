@@ -1,0 +1,33 @@
+body {
+    background-color: rgb(0, 174, 255);
+    /* display: flex;
+    flex-direction: column;/
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;  */
+}
+
+* {
+    font-family: monospace;
+}
+
+.liList{
+    list-style: none;
+}
+
+.markCompl{
+    text-decoration: line-through;
+}
+
+.taskText:hover{
+    cursor: pointer;
+}
+
+#delBtn:hover{
+    cursor: pointer;
+}
+
+ul:hover{
+    cursor: pointer;
+}
