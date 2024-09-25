@@ -10,21 +10,32 @@ body {
 
 * {
     font-family: monospace;
+    font-size: 30px;
 }
 
 .liList{
     list-style: none;
+    font-size: 30px;
 }
 
 .markCompl{
     text-decoration: line-through;
+    opacity: 0.5;
+    color: rgb(0, 0, 0);
 }
 
 .taskText:hover{
     cursor: pointer;
 }
 
-#delBtn:hover{
+.delBtn{
+    background: none;
+    border: none;
+    color: red;
+    font-size: 30px;
+}
+
+.delBtn:hover{
     cursor: pointer;
 }
 
