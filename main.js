@@ -38,10 +38,9 @@ addTaskBtn.addEventListener("click", function () {
     createSpan.innerHTML = taskObject.text;
     createLi.appendChild(createSpan);
 
-    taskTextInput.value = "";
-
     // Push taskObject to taskStorage
     taskStorage.push(taskObject);
+    taskTextInput.value = "";
     console.log(taskStorage);
 
     // Span click event for marking tasks
@@ -52,18 +51,22 @@ addTaskBtn.addEventListener("click", function () {
         if (taskObject.completed) {
             createSpan.classList.add("markCompl");
             const indexTwo = taskStorage.indexOf(taskObject);
+
             if (indexTwo > -1) {
-                taskStorage.splice(indexTwo, 1);
                 finishedStorage.push(taskObject);
+                taskStorage.splice(indexTwo, 1);
                 console.log(finishedStorage);
+                console.log(taskStorage);
             }
         } else {
             createSpan.classList.remove("markCompl");
             const indexOne = finishedStorage.indexOf(taskObject);
+
             if (indexOne > -1) {
-                finishedStorage.splice(indexOne, 1);
                 taskStorage.push(taskObject);
+                finishedStorage.splice(indexOne, 1);
                 console.log(finishedStorage);
+                console.log(taskStorage);
             }
         }
         taskCount();
