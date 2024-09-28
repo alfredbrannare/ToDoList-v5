@@ -56,7 +56,7 @@ addTaskBtn.addEventListener("click", function () {
                 finishedStorage.push(taskObject);
                 taskStorage.splice(indexTwo, 1);
                 console.log(finishedStorage);
-                console.log(taskStorage);
+                
             }
         } else {
             createSpan.classList.remove("markCompl");
@@ -65,7 +65,7 @@ addTaskBtn.addEventListener("click", function () {
             if (indexOne > -1) {
                 taskStorage.push(taskObject);
                 finishedStorage.splice(indexOne, 1);
-                console.log(finishedStorage);
+                
                 console.log(taskStorage);
             }
         }
