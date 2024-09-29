@@ -41,7 +41,7 @@ addTaskBtn.addEventListener("click", function () {
     // Push taskObject to taskStorage
     taskStorage.push(taskObject);
     taskTextInput.value = "";
-    console.log(taskStorage);
+    
 
     // Span click event for marking tasks
     createSpan.addEventListener("click", function () {
@@ -55,7 +55,7 @@ addTaskBtn.addEventListener("click", function () {
             if (indexTwo > -1) {
                 finishedStorage.push(taskObject);
                 taskStorage.splice(indexTwo, 1);
-                console.log(finishedStorage);
+                
                 
             }
         } else {
@@ -66,7 +66,7 @@ addTaskBtn.addEventListener("click", function () {
                 taskStorage.push(taskObject);
                 finishedStorage.splice(indexOne, 1);
                 
-                console.log(taskStorage);
+                
             }
         }
         taskCount();
