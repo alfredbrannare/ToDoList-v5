@@ -2,7 +2,7 @@
 
 // Declaring variables
 const taskStorage = [];
-const finishedStorage = [];
+// const finishedStorage = [];
 const taskInfo = document.querySelector("#taskInfo");
 const taskTextInput = document.querySelector("#taskTextInput");
 const addTaskBtn = document.querySelector("#addTaskBtn");
@@ -41,7 +41,7 @@ addTaskBtn.addEventListener("click", function () {
     // Push taskObject to taskStorage
     taskStorage.push(taskObject);
     taskTextInput.value = "";
-    
+
 
     // Span click event for marking tasks
     createSpan.addEventListener("click", function () {
@@ -50,24 +50,9 @@ addTaskBtn.addEventListener("click", function () {
         // Move task between taskStorage and finishedStorage
         if (taskObject.completed) {
             createSpan.classList.add("markCompl");
-            const indexTwo = taskStorage.indexOf(taskObject);
 
-            if (indexTwo > -1) {
-                finishedStorage.push(taskObject);
-                taskStorage.splice(indexTwo, 1);
-                
-                
-            }
         } else {
             createSpan.classList.remove("markCompl");
-            const indexOne = finishedStorage.indexOf(taskObject);
-
-            if (indexOne > -1) {
-                taskStorage.push(taskObject);
-                finishedStorage.splice(indexOne, 1);
-                
-                
-            }
         }
         taskCount();
     });
@@ -80,28 +65,21 @@ addTaskBtn.addEventListener("click", function () {
 
     // Delete button event listener
     delBtn.addEventListener("click", function () {
-        if (taskObject.completed) {
-            // Find and remove from finishedStorage
-            const indexTwo = finishedStorage.indexOf(taskObject);
-            if (indexTwo > -1) {
-                finishedStorage.splice(indexTwo, 1);
-            }
-        } else {
-            // Find and remove from taskStorage
-            const indexOne = taskStorage.indexOf(taskObject);
+       const indexOne = taskStorage.indexOf(taskObject);
             if (indexOne > -1) {
                 taskStorage.splice(indexOne, 1);
+                createLi.remove();
+                taskCount();
             }
-        }
-        createLi.remove();  
-        taskCount();        
-    });
-
+        });
     taskCount();
 });
 
 // Task count function
 function taskCount() {
-    finishedTask.textContent = `Finished Tasks: ${finishedStorage.length}`;
-    remainingTask.textContent = `Remaining Tasks: ${taskStorage.length}`;
+    const finishedTasksCount = taskStorage.filter(task => task.completed).length;
+    const remainingTaskCount = taskStorage.filter(task => !task.completed).length;
+
+    finishedTask.textContent = `Finished Tasks: ${finishedTasksCount}`;
+    remainingTask.textContent = `Remaining Tasks: ${remainingTaskCount}`;
 }
