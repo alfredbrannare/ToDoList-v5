@@ -16,6 +16,7 @@ let taskId = 1;
 addTaskBtn.addEventListener("click", function () {
     // Alert if input is empty
     if (taskTextInput.value === "") {
+        warning.style.animation = "fadeIn 0.5s ease forwards";
         warning.innerHTML = "You have to type something";
         return;
     } else {
@@ -44,7 +45,7 @@ addTaskBtn.addEventListener("click", function () {
 
 
     // Span click event for marking tasks
-    createSpan.addEventListener("click", function () {
+    createLi.addEventListener("click", function () {
         taskObject.completed = !taskObject.completed;
 
         // Move task between taskStorage and finishedStorage
@@ -59,19 +60,24 @@ addTaskBtn.addEventListener("click", function () {
 
     // Delete button
     const delBtn = document.createElement("button");
-    delBtn.innerHTML = "&#128465;";
+    delBtn.innerHTML = "x";
     delBtn.classList.add("delBtn");
     createLi.appendChild(delBtn);
 
     // Delete button event listener
     delBtn.addEventListener("click", function () {
-       const indexOne = taskStorage.indexOf(taskObject);
+        createLi.style.animation = "fadeOut 0.5s ease forwards";
+
+        setTimeout(function () {
+            const indexOne = taskStorage.indexOf(taskObject);
             if (indexOne > -1) {
                 taskStorage.splice(indexOne, 1);
                 createLi.remove();
                 taskCount();
             }
-        });
+        }, 500);
+
+    });
     taskCount();
 });
 
