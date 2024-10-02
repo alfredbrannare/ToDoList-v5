@@ -10,6 +10,8 @@ const taskBox = document.querySelector("ul");
 const finishedTask = document.querySelector("#finishedTask");
 const remainingTask = document.querySelector("#remainingTask");
 const warning = document.querySelector("#warning");
+const fantasy = document.querySelector("#fantasy");
+const modern = document.querySelector("#modern");
 
 let taskId = 1;
 
@@ -37,6 +39,7 @@ addTaskBtn.addEventListener("click", function () {
     // Create the span for the text input
     const createSpan = document.createElement("span");
     createSpan.innerHTML = taskObject.text;
+    createSpan.classList.add("spanList")
     createLi.appendChild(createSpan);
 
     // Push taskObject to taskStorage
