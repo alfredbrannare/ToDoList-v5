@@ -52,11 +52,30 @@ h1{
     border-left: none;
     border-radius: 0px 5px 5px 0px; 
     background-color: rgb(69, 206, 69);
+
+    position: relative;
+    background-color: #46c746;
+    isolation: isolate;
+    cursor: pointer;
 }
 
-#taskInputs button:hover{
-    cursor: pointer;
-    background-color: rgb(79, 238, 79);
+#taskInputs button::before{
+    content: "";
+    position: absolute;
+    background-color: #44e95f;
+    top: 0;
+    left: 100%;
+    right: 0;
+    bottom: 0;
+    transition: left 500ms ease-out;
+
+    z-index: -1;
+
+}
+
+#taskInputs button:hover::before{
+    
+    left: 0;
 }
 
 #warning{
