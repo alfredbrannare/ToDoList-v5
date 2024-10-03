@@ -10,8 +10,8 @@ const taskBox = document.querySelector("ul");
 const finishedTask = document.querySelector("#finishedTask");
 const remainingTask = document.querySelector("#remainingTask");
 const warning = document.querySelector("#warning");
-const fantasy = document.querySelector("#fantasy");
-const modern = document.querySelector("#modern");
+const themesBtn = document.querySelector("#themesBtn");
+const themeStylesheet = document.querySelector("#themeStylesheet");
 
 let taskId = 1;
 
@@ -92,3 +92,16 @@ function taskCount() {
     finishedTask.textContent = `Finished Tasks: ${finishedTasksCount}`;
     remainingTask.textContent = `Remaining Tasks: ${remainingTaskCount}`;
 }
+
+themesBtn.addEventListener("click", function(){
+    
+    if (themesBtn.textContent === "Modern"){
+        themesBtn.textContent = "Fantasy";
+        themeStylesheet.href = "main.css";
+        console.log("Switched to Modern theme");        
+    } else if (themesBtn.textContent == "Fantasy"){
+        themesBtn.textContent = "Modern";
+        themeStylesheet.href = "main2.css";
+        console.log("Switched to Fantasy theme");
+    }
+})
