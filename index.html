@@ -6,30 +6,33 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>To-Do List v5</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link id="themeStylesheet" rel='stylesheet' type='text/css' media='screen' href='main2.css'>
+    <link id="themeStylesheet" rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <link href="https://fonts.cdnfonts.com/css/luminari" rel="stylesheet">
     <script src='main.js' defer></script>
 </head>
 
 <body>
-    <button type="button" id="themesBtn">Modern</button>
+    <!-- <button type="button" id="themesBtn">Fantasy</button> -->
 
     <div id="taskInfo">
-        <h1>To-Do List</h1>
-        <p id="finishedTask">Finished Tasks: 0</p>
-        <p id="remainingTask">Remaining Tasks: 0</p>
+        <h1>My ToDo</h1>
+        <p id="finishedTask">0 completed</p>
+
+        <div id="taskInputs">
+            <input type="text" id="taskTextInput" placeholder="">
+            <button type="button" id="addTaskBtn">OK</button>
+        </div>
+        <p id="warning"></p>
+        <div>
+            <ul>
+            </ul>
+        </div>
     </div>
 
-    <div id="taskInputs">
-        <input type="text" id="taskTextInput" placeholder="Add tasks">
-        <button type="button" id="addTaskBtn">+</button>
-    </div>
-    <p id="warning"></p>
+    
+    
 
-    <div>
-        <ul>
-        </ul>
-    </div>
+
 </body>
 
 </html>
