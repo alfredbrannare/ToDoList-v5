@@ -50,8 +50,8 @@ body{
 }
 
 #finisedTask.visible {
-    opacity: 1;                  /* Fully opaque */
-    visibility: visible;          /* Make it visible */
+    opacity: 1;                  
+    visibility: visible;          
 }
 
 #taskInputs input:focus{
@@ -198,5 +198,5 @@ ul{
 }
 
 .warningAnimation {
-    animation: blinkWarning 1s ease-in-out; /* Animation will play 3 times */
+    animation: blinkWarning 1s ease-in-out; 
 }
