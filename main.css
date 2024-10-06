@@ -21,7 +21,7 @@ body{
     padding: 20px 0px;
     font-family: Arial, Helvetica, sans-serif;
     /* font-weight: 600; */
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     text-align: center;
     min-height: 250px;
     animation: fadeIn 0.5s forwards;
@@ -113,7 +113,7 @@ ul{
     height: 30px;
     justify-content: center; 
     margin-top: 10px;
-    animation: fadeInTask 0.5s;
+    animation: fadeInTask 0.3s;
 }
 
 .spanList{
