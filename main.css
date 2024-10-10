@@ -1,16 +1,14 @@
-
-
-body{
+body {
     background: linear-gradient(rgb(255, 215, 215), rgb(252, 102, 102));
     height: 100vh;
 }
 
-*{
+* {
     list-style: none;
     box-sizing: border-box
 }
 
-#taskInfo{
+#taskInfo {
     background-color: white;
     justify-content: center;
     align-items: center;
@@ -29,7 +27,7 @@ body{
 
 
 
-#taskInfo h1{
+#taskInfo h1 {
     font-family: 'Times New Roman', Times, serif;
     font-size: 50px;
     margin: 2px 0px 5px 0px;
@@ -39,7 +37,7 @@ body{
     animation-delay: 0.5s;
 }
 
-#finishedTask{
+#finishedTask {
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     justify-content: center;
@@ -49,16 +47,16 @@ body{
     animation-delay: 0.5s;
 }
 
-#finisedTask.visible {
-    opacity: 1;                  
-    visibility: visible;          
+#finished.visible {
+    opacity: 1;
+    visibility: visible;
 }
 
-#taskInputs input:focus{
+#taskInputs input:focus {
     border-color: rgb(0, 110, 255);
 }
 
-#taskInputs{
+#taskInputs {
     max-height: 40px;
     padding: 0;
     display: flex;
@@ -66,13 +64,13 @@ body{
     margin-top: 30px;
 }
 
-#taskInputs input{
+#taskInputs input {
     padding: 14px;
     border-radius: 5px;
     width: 250px;
     margin-left: 5px;
     border: 2px solid grey;
-    line-height: 1;   
+    line-height: 1;
     height: 40px;
     font-size: 27px;
     outline: none;
@@ -83,7 +81,7 @@ body{
 }
 
 
-#taskInputs button{
+#taskInputs button {
     justify-content: center;
     border-radius: 5px;
     border: 2px solid grey;
@@ -98,67 +96,75 @@ body{
     animation-delay: 0.7s;
 }
 
-#warning{
+#warning {
     color: red;
     font-family: Arial, Helvetica, sans-serif, italic;
     font-style: oblique;
     font-weight: 600;
 }
 
-ul{
+.warningAnimation {
+    animation: blinkWarning 1s ease-in-out;
+}
+
+ul {
     padding: 0;
 }
 
-.liList{
+.liList {
     height: 30px;
-    justify-content: center; 
+    justify-content: center;
     margin-top: 10px;
     animation: fadeInTask 0.3s;
 }
 
-.spanList{
+.spanList {
     font-size: 30px;
     margin: 0px 10px;
     transition: color 0.5s ease-in;
 }
 
-.spanList:hover{
+.spanList:hover {
     text-decoration: line-through;
     cursor: pointer;
 }
 
-.delBtn{
+.delBtn {
     border: none;
     background-color: transparent;
     font-size: 20px;
     margin-left: 5px;
 }
 
-.markCompl{
+.delBtn:hover {
+    cursor: pointer;
+}
+
+.markCompl {
     text-decoration: line-through;
-    color: rgb(116,116,116);
+    color: rgb(116, 116, 116);
     transition: color 0.5s ease-in;
 }
 
-/* Keyframe for taskInfo */
+
 @keyframes fadeIn {
     0% {
         opacity: 0;
-        transform: translateY(-100px); 
+        transform: translateY(-100px);
     }
 
     60% {
         opacity: 1;
-        transform: translateY(50px); 
+        transform: translateY(50px);
     }
 
     100% {
         opacity: 1;
-        transform: translateY(0); 
+        transform: translateY(0);
     }
 }
 
-/* Keyframe for liList */
+
 @keyframes fadeInTask {
     0% {
         opacity: 0;
@@ -172,16 +178,15 @@ ul{
 
     100% {
         opacity: 1;
-        transform: translateY(0); 
+        transform: translateY(0);
     }
 }
-/* Warning blinking */
+
 @keyframes blinkWarning {
     20%, 60%, 100% {
-        color: red; 
+        color: red;
         opacity: 1;
-    }
-    0%, 40%, 80% {
+    } 0%, 40%, 80% {
         color: red;
         opacity: 0;
     }
@@ -191,12 +196,10 @@ ul{
     0% {
         opacity: 0;
         visibility: hidden;
-    } 100% {
+    }
+
+    100% {
         opacity: 1;
         visibility: visible;
     }
-}
-
-.warningAnimation {
-    animation: blinkWarning 1s ease-in-out; 
 }
